@@ -1,0 +1,37 @@
+/*----------Media Querries----------*/
+$desktop: 840px;
+$mobile: 840px;
+$mobile-xs: 415px;
+
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: #{$mobile}) {
+        @content;
+    }
+}
+
+@mixin mobile-xs {
+    @media (max-width: #{$mobile-xs}) {
+        @content;
+    }
+}
+
+@mixin edge {
+    @supports (-ms-accelerator:true) {
+        @content;
+    }
+    @supports (-ms-ime-align:auto) {
+        @content;
+    }
+}
+
+@mixin ie11 {
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        @content;
+    }
+}

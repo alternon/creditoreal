@@ -1,0 +1,17 @@
+<div class="modal modal-documentos" fxLayout="column" fxLayoutAlign="center stretch">
+    <p>Agiliza el procesamiento de la solicitud de crédito adjuntando los siguientes documentos en formato JPG, PNG o PDF, cada archivo debe pesar máximo 4.5Mb.</p>
+    <h3>Identificación Oficial Vigente</h3>
+    <p class="texto-modal">Cargar una identificación vigente.</p>
+    <div fxLayout="row wrap" fxLayoutAlign="space-around center">
+      <input type="file" name="file" ng2FileSelect [uploader]="uploader" />
+      <input type="file" name="file" ng2FileSelect [uploader]="uploader" />
+    </div>
+    <h3>Comprobante de domicilio</h3>
+    <p class="texto-modal">Con antig&uuml;edad máxima de 90 días, eje: Luz, agua, teléfono fijo, predial.</p>
+    <div fxLayout="column" fxLayoutAlign="center center">
+      <input type="file" name="file" ng2FileSelect [uploader]="uploader" />
+    </div>
+    <div mat-dialog-actions>
+        <button class="btn-big" mat-raised-button color="accent" (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">Aceptar</button>
+    </div>
+</div>

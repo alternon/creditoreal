@@ -1,0 +1,23 @@
+<div class="login-wrapper" fxLayout="column" fxLayoutAlign="center center">
+    <div>
+        <div class="header-component" fxLayout="row" fxLayoutAlign="space-between start">
+            <div>
+                <h1>Olvidé Contraseña</h1>
+                <p>Enviaremos una contraseña temporal al teléfono asociado a tu usuario</p>
+            </div>
+            <div>
+                <img src="./assets/icon-contact.png">
+            </div> 
+        </div>
+        <form [formGroup]="olvideContrasenaForm" class="form">
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Usuario</mat-label>
+                <input matInput placeholder="" formControlName="usuario" required>
+            </mat-form-field>
+            <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+                <button mat-raised-button class="btn-block half-width" routerLink="/login" type="button">Regresar</button>
+            <button mat-raised-button color="accent" class="btn-block half-width" [disabled]="!olvideContrasenaForm.valid" (click)="obtenerDatos()" type="button">Continuar</button>
+            </div>
+        </form>
+    </div>
+</div>

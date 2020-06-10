@@ -1,0 +1,73 @@
+@import '../../../scss/mixins';
+@import '../../../scss/variables';
+
+.block-campos {
+    padding: 0 !important;
+
+    .mat-button-toggle {
+
+        span {
+            color: $blue;
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .icon-seguros {
+            width: 50%;
+            float: left;
+            margin-right: 3rem;
+            color: $grey;
+            font-size: 2.5rem;
+        }
+    }
+
+    .mat-button-toggle-checked {
+        background-color: $blue;
+
+        .icon-seguros, span {
+            color: $white;
+        }
+    }
+
+}
+
+h4 {
+    font-weight: 500;
+}
+
+.accordion {
+    color: $green-blue;
+    margin: 0;
+    min-height: 275px;
+    
+    @include mobile {
+        min-height: auto;
+    }
+    
+    .mat-expansion-panel {
+        background: transparent;
+    }
+}
+
+.detalles-coberturas {
+    color: grey;
+    div {
+        &:last-child {
+            text-align: center;
+        }
+
+        p {
+            margin: 0.2em;
+            
+            mat-icon {
+                font-size: 1em;
+                width: 20px;
+                height: 20px;
+            }
+
+            &:first-child {
+                font-weight: 700;
+            }
+        }
+    }
+}

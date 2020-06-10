@@ -1,0 +1,25 @@
+<!-- <form [formGroup]="plazoForm" class="form"> -->
+    <div class="block-plazo" fxLayout="column">
+        <h4>Monto a financiar</h4>
+        <p class="monto-financiar">{{montoFinanciar | currency:"MXN":"symbol-narrow"}}</p>
+        <h4>¿Cómo quieres pagar el seguro?</h4>
+        <mat-radio-group class="opcion-pagar" aria-label="Selecciona una opción">
+            <mat-radio-button [checked]='true' value="financiado">Financiado</mat-radio-button>
+            <mat-radio-button value="contado">Contado</mat-radio-button>
+        </mat-radio-group>
+        <h4>Plazos</h4>
+        <div class="container-list-items">
+            <mat-button-toggle-group class="block-plazos" vertical>
+                <mat-button-toggle *ngFor="let Plazo of plazos" [value]="Plazo" (change)="enviarDatos($event.value)">
+                    <span><mat-icon>check_circle</mat-icon>{{Plazo.financiadoMonto|currency:"MXN":"symbol-narrow"}}</span>
+                    <span>{{Plazo.meses}} meses</span>
+                </mat-button-toggle>
+            </mat-button-toggle-group>
+        </div>
+        <p class="notas">*Cálculo informativo. El enganche y la tasa de interés pueden variar dependiendo del perfil e historial crediticio del cliente.</p>
+    </div>
+    <div class="block-btn" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <button class="btn-big" mat-raised-button (click)="regresar()" type="button">Regresar</button>
+        <button class="btn-big" mat-raised-button color="accent" [disabled]="disable" (click)="irSolicitud()" type="button">Comenzar solicitud</button>
+    </div>
+<!-- </form> -->

@@ -1,0 +1,21 @@
+@import '../../../scss/variables';
+
+.mat-dialog-actions {
+    justify-content: center;
+    margin: 0 0 0.3em;
+}
+
+input {
+    margin: 3em 0;
+}
+
+.texto-modal {
+    margin: 1em 0 0 0;
+}
+
+h3 {
+    font-weight: 500;
+    margin: 0 -24px;
+    padding: 1em 0 1em 1.2em;
+    background-color: $pale-lilac;
+}

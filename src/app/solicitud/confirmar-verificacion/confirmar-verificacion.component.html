@@ -1,0 +1,43 @@
+<form [formGroup]="confirmarVerificacionForm" class="example-form">
+    <ng-template matStepLabel>Confirma el código de verificación</ng-template>
+    <div class="header-component title-component" fxLayout="row" fxLayoutAlign="center center">
+        <div>
+            <h1>Confirma el código de verificación</h1>
+            <p>Vuelve a ingresar el código enviado al <span>{{telefono}}</span></p>
+            <p class="timer">{{ minutes | formatTime }}:{{ seconds | formatTime }}</p>
+        </div>
+    </div>
+    <div class="inputVerificacion" fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="10px grid">
+        <mat-form-field appearance="outline">
+            <input matInput formControlName="verCamp1" required maxlength="1">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <input matInput formControlName="verCamp2" required maxlength="1">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <input matInput formControlName="verCamp3" required maxlength="1">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <input matInput formControlName="verCamp4" required maxlength="1">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <input matInput formControlName="verCamp5" required maxlength="1">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <input matInput formControlName="verCamp6" required maxlength="1">
+        </mat-form-field>
+    </div>
+    <div class="textarea" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <div class="textarea-text"><p>Autorización para solicitar Reportes de Crédito</p>Autorizo expresamente a CREDITO REAL S.A.B. de C.V. SOFOM E.R. para que lleve a cabo Investigaciones sobre mi comportamiento Crediticio en las Sociedades de Información Crediticia (SIC) que estime conveniente. Conozco la naturaleza y alcance de la Información que se solicitará, del uso que se le dará y que se podrán realizar consultas periódicas de mi historial crediticio.
+            Consiento que esta autorización tenga una vigencia de 3 años contados a partir de hoy, y en su caso mientras mantengamos relación jurídica. Acepto que este documento quede bajo propiedad de CREDITO REAL S.A.B. de C.V. SOFOM E.R. para efectos de control y cumplimiento del artículo 28 de la LRSIC.
+            </div>
+    </div>
+    <div class="block-aviso-privacidad">
+        <mat-checkbox formControlName="terminos" required></mat-checkbox>
+        <p>Cliente ha leído y acepta la <a href="../../../assets/doc/aviso_de_privacidad.pdf" target="_blank">Política de privacidad</a> de Crédito Real, así como <span>la Solicitud de su Reporte de Crédito</span></p>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <button class="btn-big" mat-raised-button matStepperPrevious type="button">Regresar</button>
+        <button class="btn-big" mat-raised-button color="accent" (click)="reset()" matStepperNext type="button" [disabled]="!confirmarVerificacionForm.valid">Continuar</button>
+    </div>
+</form>

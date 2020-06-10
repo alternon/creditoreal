@@ -1,0 +1,36 @@
+[
+  {
+    "id": 1,
+    "nombre": "Audi",
+    "modelos": [
+      {"modelos": "A5"},
+      {"modelos": "A3"}
+    ],
+    "anos": [
+      {"anos": "2017"},
+      {"anos": "2018"},
+      {"anos": "2019"}
+    ],
+    "version": [
+      {"version": "Coupé"},
+      {"version": "Sportback"}
+    ]
+  },
+  {
+    "id": 2,
+    "nombre": "BMW",
+    "modelos": [
+      {"modelos": "Serie 6"},
+      {"modelos": "Serie 7"}
+    ],
+    "anos": [
+      {"anos": "2017"},
+      {"anos": "2018"},
+      {"anos": "2019"}
+    ],
+    "version": [
+      {"version": "Sedán"},
+      {"version": "Convertible"}
+    ]
+  }
+]

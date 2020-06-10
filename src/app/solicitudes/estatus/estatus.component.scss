@@ -1,0 +1,141 @@
+@import '../../../scss/mixins';
+@import '../../../scss/variables';
+
+.block-list-items {
+    position: relative;
+    flex: 1 1 calc(35%);
+    min-width: calc(35%);
+
+    @include mobile {
+        flex: 1 1 calc(100%);
+        min-width: calc(100%);
+        margin-top: 90px;
+        padding: 5vh 5vw 0;
+
+        .container-list-items {
+            overflow-y: auto;
+            max-height: 100%;
+        }
+    }
+}
+
+@include ie11 {
+    .block-list-items {
+        width: calc(34%);
+    }
+}
+
+.container-list-items {
+    overflow-y: scroll;
+    max-height: 70vh;
+    position: relative;
+}
+
+.lista-solicitudes {
+    position: relative;
+    display: block;
+    padding-left: 35px;
+
+    .fecha {
+        margin:1.5em 0 0.5em;
+        font-size: 0.9em;
+        font-weight: 500;
+    }
+
+    .descripcion {
+        margin-top: 0;
+        font-weight: 500;
+    }
+
+    .mat-icon.mat-accent {
+        position: absolute;
+        top: 20px;
+        left: 0;
+        background-color: $pale-grey;
+        border-radius: 100%;
+    }
+    
+    &::after {
+        content: "";
+        width: 1px;
+        height: 100%;
+        background-color: $grey;
+        position: absolute;
+        top: 40px;
+        left: 11px;
+        z-index: -1;
+    }
+
+    &:last-child {
+        &::after {
+            content: none;
+        } 
+    }
+}
+
+.darktheme {
+    flex: 1 1 calc(65%);
+    min-width: calc(65%);
+    color: $white;
+    text-align: center;
+
+    @include mobile {
+        flex: 1 1 calc(100%);
+        min-width: calc(100%);
+    }
+
+    .monto {
+        font-size: 1.5em;
+        font-weight: 500;
+    }
+
+    .check_circle {
+        font-size: 2.5em;
+    }
+
+    .id-solicitud,
+    h3 {
+        color: $pale-lilac;
+    }
+}
+
+.rojo {
+    color: $red;
+}
+
+.amarillo {
+    color: $yellow;
+}
+
+.btn-subir {
+    .mat-icon {
+        color: $white;
+        margin: -2px 10px 0 0;
+    }
+}
+
+.regresar {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    width: 100px;
+    height: 100px;
+    transform: translate(0, -50%);
+
+    @include mobile {
+        top: 25vh;
+        left: 0;
+        font-size: 10px;
+        width: 50px;
+        height: 50px;
+    }
+
+    mat-icon {
+        font-size: 5em;
+        width: 40px
+    }
+}
+
+.block {
+    position: relative;
+}

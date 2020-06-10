@@ -1,0 +1,31 @@
+@import '../../scss/variables';
+
+.login-wrapper {
+    height:70vh;
+    text-align: center;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.login-wrapper .form {
+    min-width:100%;
+    max-width:300px;
+    width:100%;
+}
+
+.login-wrapper .full-width,
+.login-wrapper .btn-block {
+    width:100%;
+}
+
+.login-wrapper .half-width {
+    width:50%;
+}
+
+h1 {
+    color:$dark-indigo;
+}
+
+.mat-raised-button {
+    min-height: 50px;
+}

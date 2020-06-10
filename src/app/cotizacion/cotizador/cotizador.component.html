@@ -1,0 +1,67 @@
+<form [formGroup]="cotizadorForm" class="form">
+    <div class="block-campos cotizador-campos" fxLayout="row wrap" fxLayoutAlign="space-between center" fxLayoutGap="10px grid">
+        <mat-form-field fxFlex="calc(100% - 10px)" appearance="outline">
+            <mat-label>Costo del auto</mat-label>
+            <span matPrefix>$ &nbsp;</span>
+            <input matInput autocomplete="off" formControlName="costoAuto" appAllowDecimalNumber required [value]="cotizadorForm.get('costoAuto').value" (blur)="transformTotalCostoAuto()">
+        </mat-form-field>
+        <mat-form-field fxFlex="calc(100% - 10px)" appearance="outline">
+            <mat-label>Enganche</mat-label>
+            <span matPrefix>$ &nbsp;</span>
+            <input matInput autocomplete="off" formControlName="enganche" appAllowDecimalNumber required [value]="cotizadorForm.get('enganche').value" (blur)="transformTotalEnganche()">
+        </mat-form-field>
+        <mat-form-field fxFlex="calc(100% - 10px)" appearance="outline">
+            <mat-label>Marca del vehículo</mat-label>
+            <mat-select formControlName="marca" required>
+                <mat-option *ngFor="let marca of marcas" [value]="marca.nombre">
+                    {{ marca.nombre }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field fxFlex="calc(50% - 10px)" appearance="outline">
+            <mat-label>Modelo del vehículo</mat-label>
+            <mat-select formControlName="modelo" required>
+                <mat-option *ngFor="let modelo of modelos" [value]="modelo.modelos">
+                    {{ modelo.modelos}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field fxFlex="calc(50% - 10px)" appearance="outline">
+            <mat-label>Año</mat-label>
+            <mat-select formControlName="ano" required>
+                <mat-option *ngFor="let ano of anos" [value]="ano.anos">
+                    {{ ano.anos}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="calc(50% - 10px)" appearance="outline">
+            <mat-label>Versión del vehículo</mat-label>
+            <mat-select formControlName="version" required>
+                <mat-option *ngFor="let version of versions" [value]="version.version">
+                    {{ version.version}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="calc(50% - 10px)" appearance="outline">
+            <mat-label>Código Postal</mat-label>
+            <input autocomplete="off" matInput maxlength="5" formControlName="codigoPostal" required>
+            <mat-error *ngIf="cotizadorForm.get('codigoPostal').hasError('minlength')">
+                Se requiere mínimo 5 caracteres
+            </mat-error>
+            <mat-error *ngIf="cotizadorForm.get('codigoPostal').hasError('pattern')">
+                Solo números
+            </mat-error>
+        </mat-form-field>
+
+    
+        <mat-slide-toggle color="accent" formControlName="compruebaIngresos">Cliente comprueba ingresos*</mat-slide-toggle>
+        <mat-slide-toggle color="accent" formControlName="historialCrediticio">Tiene historial crediticio *</mat-slide-toggle>
+        <p class="notas">*Cálculo informativo. El enganche y la tasa de interés pueden variar dependiendo del perfil e historial crediticio del cliente.</p>
+    </div>
+    <div class="block-btn" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <button class="btn-big" mat-raised-button (click)="regresar()" type="button">Regresar</button>
+        <button class="btn-big" mat-raised-button color="accent" [disabled]="!cotizadorForm.valid" (click)="datosCotizador()" type="button">Cotizar</button>
+    </div>
+</form>

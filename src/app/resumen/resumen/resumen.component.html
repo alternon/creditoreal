@@ -1,0 +1,33 @@
+<div class="container">
+    <div fxLayout="column" fxLayoutAlign="center stretch">
+        <div fxLayout="row wrap" fxLayoutAlign="space-between center" fxLayoutGap="grid">
+            <div class="darktheme" fxLayout="column" fxLayoutAlign="center center">
+                <div class="block-detalles">
+                    <h3>Resumen</h3>
+                    <p class="monto-mensual">{{costoMensual | currency:"MXN":"symbol-narrow"}}</p>
+                    <p>a {{mensualidades}} meses</p>
+                    <div class="montos" fxLayout="row wrap" fxLayoutAlign="space-between center" fxLayoutGap="grid">
+                        <p>Monto a financiar <span>{{montoFinanciar | currency:"MXN":"symbol-narrow"}}</span></p>
+                        <p>Costo del Seguro <span>{{seguro | currency:"MXN":"symbol-narrow"}}</span></p>
+                        <p>Enganche <span>{{enganche | currency:"MXN":"symbol-narrow"}}</span></p>
+                        <p>Comisión por apertura 3% <span>{{comision | currency:"MXN":"symbol-narrow"}}</span></p>
+                        <p>Costo de auto <span>{{costoAuto | currency:"MXN":"symbol-narrow"}}</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="block-list-items">
+                <div class="block-campos cotizador-campos">
+                    <p><span>{{nombre}}</span></p>
+                    <p>Celular <span>{{celular}}</span></p>
+                    <p>Correo electrónico <span>{{correo}}</span></p>
+                    <p>RFC<span>{{rfc}}</span></p>
+                </div>
+                <div class="block-btn" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+                    <button class="btn-big" mat-raised-button (click)="regresar()" type="button">Regresar</button>
+                    <button class="btn-big" mat-raised-button color="accent" (click)="enviarSolicitud()" type="button">Enviar solicitud</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

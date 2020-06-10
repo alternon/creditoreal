@@ -1,0 +1,22 @@
+<app-loading></app-loading>
+<div class="login-wrapper" fxLayout="column" fxLayoutAlign="center center">
+    <div>
+        <h1>Iniciar Sesión</h1>
+        <form [formGroup]="loginForm" class="form">
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Usuario</mat-label>
+                <input matInput placeholder="" autocomplete="off" formControlName="usuario" required>
+            </mat-form-field>
+            <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Contraseña</mat-label>
+                <input matInput placeholder="" autocomplete="off" formControlName="contrasena" type="password" required>
+            </mat-form-field>
+            <mat-checkbox class="login-recordar" formControlName="recordarContrasena">Recordar datos de usuario</mat-checkbox>
+<!--             <mat-error *ngIf="loginForm.hasError('notSame')">
+                El usuario o contraseña no coincide.
+            </mat-error> -->
+            <button mat-raised-button color="accent" class="btn-block" type="button" [disabled]="!loginForm.valid" (click)="obtenerDatos()">Iniciar Sesión</button>
+            <button mat-button color="accent" type="button" routerLink="/login/olvide-contrasena">Olvidé mi contraseña</button>
+        </form>
+    </div>
+</div>

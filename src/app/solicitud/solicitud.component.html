@@ -1,0 +1,30 @@
+<app-header [statusLoginInput]="statusLogin"></app-header>
+<div class="container">
+    <mat-progress-bar mode="determinate" [value]="progresValue"></mat-progress-bar>
+    <mat-horizontal-stepper labelPosition="bottom" [linear]="isLinear" #stepper (selectionChange)="selectionChange($event)">
+        <mat-step [editable]="editable">
+            <app-info-personal [stepper]='stepper'></app-info-personal>
+        </mat-step>
+        <mat-step [editable]="editable">
+            <app-domicilio-personal [stepper]='stepper'></app-domicilio-personal>
+        </mat-step>
+        <mat-step [editable]="editable">
+            <app-contacto></app-contacto>
+        </mat-step>
+        <mat-step [editable]="editable">
+            <app-codigo-verificacion></app-codigo-verificacion>
+        </mat-step>
+        <mat-step [editable]="editable">
+            <app-confirmar-verificacion></app-confirmar-verificacion>
+        </mat-step>
+        <mat-step [editable]="editable">
+            <app-info-laboral></app-info-laboral>
+        </mat-step>
+        <mat-step [editable]="editable">
+            <app-domicilio-laboral></app-domicilio-laboral>
+        </mat-step>
+        <mat-step [editable]="editable">
+            <app-referencias></app-referencias>
+        </mat-step>
+    </mat-horizontal-stepper>
+</div>

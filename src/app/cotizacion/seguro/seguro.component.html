@@ -1,0 +1,43 @@
+<!-- <form [formGroup]="seguroForm" class="form"> -->
+    <h4>Costo del seguro</h4>
+    <div fxLayout="column" fxLayoutAlign="center stretch" fxLayoutGap="grid">
+        <mat-button-toggle-group class="block-campos" vertical (click)="enviarDatos()">
+            <mat-button-toggle value="13000" (change)="obtenerDato($event)"><i class="icon-seguros icon-qualitas"></i><span>$13,000.00</span></mat-button-toggle>
+            <mat-button-toggle value="14000" (change)="obtenerDato($event)"><i class="icon-seguros icon-chubb"></i><span>$14,000.00</span></mat-button-toggle>
+            <mat-button-toggle value="15000" (change)="obtenerDato($event)"><i class="icon-seguros icon-ana"></i><span>$15,000.00</span></mat-button-toggle>
+        </mat-button-toggle-group>
+        <mat-accordion class="accordion">
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Detalle de coberturas
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="detalles-coberturas" fxLayout="row wrap" fxLayoutAlign="center stretch" fxLayoutGap="grid">
+                    <div fxLayout="column">
+                        <p>Cobertura</p>
+                        <p>Daños materiales</p>
+                        <p>Robo total</p>
+                        <p>Cristales</p>
+                        <p>Responsabilidad Civil</p>
+                        <p>Gastos Médicos</p>
+                        <p>Asistencia Vial y Legal</p>
+                    </div>
+                    <div fxLayout="column">
+                        <p>Deducible</p>
+                        <p>5%</p>
+                        <p>10%</p>
+                        <p>20%</p>
+                        <p><mat-icon>check</mat-icon></p>
+                        <p><mat-icon>check</mat-icon></p>
+                        <p><mat-icon>check</mat-icon></p>
+                    </div>
+                </div>   
+            </mat-expansion-panel>
+        </mat-accordion>      
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <button class="btn-big" mat-raised-button (click)="regresar()" type="button">Regresar</button>
+        <button class="btn-big" mat-raised-button color="accent" [disabled]="disable" (click)="irPlazo()" type="button">Continuar</button>
+    </div>
+<!-- </form> -->

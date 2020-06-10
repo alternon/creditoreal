@@ -1,0 +1,38 @@
+<div class="container">
+    <div fxLayout="column" fxLayoutAlign="center stretch">
+        <div fxLayout="row wrap" fxLayoutAlign="space-between center" fxLayoutGap="grid">
+            <div class="darktheme" fxLayout="column" fxLayoutAlign="center center">
+                <img class="logo-autos" src="./assets/icon_app_round.png">
+                <h3 class="no-margin">Sucursales</h3>
+                <mat-form-field class="darkinput">
+                    <mat-select [(value)]="selected">
+                        <mat-option *ngFor="let Sucursal of sucursales" [value]="Sucursal.sucursal">
+                        {{Sucursal.sucursal}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <button mat-raised-button color="accent" class="btn-big btn-solicitud" (click)="nuevaSolicitud()"><mat-icon >add</mat-icon >Nueva Solicitud</button>
+            </div>
+            <div class="block-list-items">
+                <h2>Solicitudes</h2>
+                <div class="container-list-items">
+                    <mat-action-list>
+                        <mat-list-item class="lista-solicitudes" *ngFor="let solicitud of solicitudes" routerLink="/solicitudes/estatus">
+                            <div class="lista-solicitudes-items">
+                                <p class="fecha" mat-line>{{solicitud.fecha | date:'MM/dd/yyyy'}}</p>
+                                <div class="lista-solicitudes-text" fxLayout="row wrap" fxLayoutAlign="space-between center" fxLayoutGap="grid">
+                                    <mat-icon mat-list-icon color="primary" [ngClass]="solicitud.color" fxFlex="calc(15%)">fiber_manual_record</mat-icon>
+                                    <div fxFlex="calc(75%)">
+                                        <h3 class="usuario">{{solicitud.usuario}}</h3>
+                                        <p class="estatus">{{solicitud.estatus}}</p>
+                                    </div>
+                                    <mat-icon class="flecha" fxFlex="calc(10%)">keyboard_arrow_right</mat-icon>
+                                </div>
+                            </div>
+                        </mat-list-item>
+                    </mat-action-list>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+
+<div class="container">
+    <div class="block" fxLayout="column" fxLayoutAlign="center stretch">
+    <button class="regresar" mat-icon-button (click)="back()"><mat-icon >arrow_back_ios</mat-icon></button>
+        <div fxLayout="row wrap" fxLayoutAlign="space-between center" fxLayoutGap="grid">
+            <div class="darktheme">
+                <mat-icon class="check_circle" mat-list-icon color="accent">check_circle</mat-icon>
+                <p>Documentación Recibida: comprobante de ingresos</p>
+                <p class="id-solicitud">#4032600564 - 11/11/2019</p>
+                <h2>Test Test Test</h2>
+                <div class="solicitud-resumen" fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="grid">
+                    <div>
+                        <h3>Monto a financiar</h3>
+                        <p class="monto">$90,000</p>
+                    </div>
+                    <div>
+                        <h3>Pago Mensual</h3>
+                        <p class="monto">24 X 6388.04</p>
+                    </div>
+                </div>
+                <p>Descarga tu solicitud en el momento que <br>desees con el siguiente link 
+                <button mat-icon-button><mat-icon mat-list-icon color="warn">picture_as_pdf</mat-icon></button></p>
+            </div>
+            <div class="block-list-items">
+                <h2>Seguimiento</h2>
+                <div class="container-list-items">
+                    <mat-list-item class="lista-solicitudes" *ngFor="let solicitud of solicitudes">
+                        <mat-icon mat-list-icon color="accent" 
+                            [ngClass]="{
+                                'rojo' : solicitud.icono == 'cancel',
+                                'amarillo' : solicitud.icono == 'error'
+                            }"
+                        >{{solicitud.icono}}</mat-icon>
+                        <p class="fecha" mat-line>{{solicitud.date | date:'MM/dd/yyyy'}}</p>
+                        <p class="descripcion" mat-line> {{solicitud.updated}}</p>
+                        <button class="btn-subir" mat-raised-button color="accent" *ngIf="solicitud.upload" (click)="openDialog()"><mat-icon>cloud_upload</mat-icon> Subir documentos</button>
+                    </mat-list-item>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

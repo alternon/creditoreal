@@ -1,0 +1,49 @@
+@import '../../scss/mixins';
+@import '../../scss/variables';
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.half-width {
+    width: 50%;
+}
+
+.p-1 {
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.container {
+    position: relative;
+}
+
+.mat-progress-bar {
+    position: absolute;
+    top: 36px;
+    width: 90%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+@include edge {
+    .mat-progress-bar {
+        left: 5%;
+        transform: translate(0, 0);
+    }
+}
+
+@include ie11 {
+    .mat-progress-bar {
+        left: 5%;
+        transform: translate(0, 0);
+    }
+}
+

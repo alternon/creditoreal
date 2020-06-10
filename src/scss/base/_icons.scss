@@ -1,0 +1,44 @@
+@font-face {
+    font-family: '#{$icomoon-font-family}';
+    src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?ffma9y');
+    src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?ffma9y#iefix') format('embedded-opentype'),
+        url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?ffma9y') format('truetype'),
+        url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?ffma9y') format('woff'),
+        url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?ffma9y##{$icomoon-font-family}') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+.icon-seguros {
+    font-family: '#{$icomoon-font-family}' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 3em;
+
+}
+
+
+.icon-chubb {
+    &:before {
+        content: $icon-chubb; 
+    }
+}
+
+.icon-ana {
+    &:before {
+        content: $icon-ana; 
+    }
+}
+
+.icon-qualitas {
+    &:before {
+        content: $icon-qualitas; 
+    }
+}

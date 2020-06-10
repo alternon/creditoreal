@@ -1,0 +1,16 @@
+@import '../login.component';
+
+.login-wrapper mat-form-field.half-width {
+    display: block;
+    margin: 0 auto;
+}
+
+h1 {
+    color: $blue;
+    margin-top: 0;
+}
+
+.header-component {
+    text-align: left;
+    max-width: 300px;
+}

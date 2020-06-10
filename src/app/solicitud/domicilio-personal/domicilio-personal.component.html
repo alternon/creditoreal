@@ -1,0 +1,96 @@
+<form [formGroup]="domicilioPersonalForm" class="example-form">
+    <ng-template matStepLabel>Domicilio</ng-template>
+    <div class="header-component" fxLayout="row" fxLayoutAlign="space-between start">
+        <div>
+            <h1>Domicilio</h1>
+            <p>La dirección debe coincidir con un comprobante de domicilio vigente.</p>
+        </div>
+        <div>
+            <img src="./assets/icon-address.png">
+        </div> 
+    </div>
+    <div fxLayout="row wrap" fxLayoutAlign="space-between center" fxLayoutGap="10px grid">
+        <mat-form-field class="input-1-2"  appearance="outline">
+            <mat-label>Calle</mat-label>
+            <input matInput formControlName="calle" required>
+            <mat-error *ngIf="domicilioPersonalForm.get('calle').hasError('required')">
+                Dato Requerido
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="input-1-4"  appearance="outline">
+            <mat-label>No. exterior</mat-label>
+            <input matInput formControlName="numeroExterior" required>
+            <mat-error *ngIf="domicilioPersonalForm.get('numeroExterior').hasError('required')">
+                Dato Requerido
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="input-1-4"  appearance="outline">
+            <mat-label>No. interior</mat-label>
+            <input matInput formControlName="numeroInterior" required>
+            <mat-error *ngIf="domicilioPersonalForm.get('numeroInterior').hasError('required')">
+                Dato Requerido
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="input-1-4"  appearance="outline">
+            <mat-label>Código Postal</mat-label>
+            <input matInput formControlName="codigoPostal" maxlength="5" required>
+            <mat-error *ngIf="domicilioPersonalForm.get('codigoPostal').hasError('required')">
+                Dato Requerido
+            </mat-error>
+            <mat-error *ngIf="domicilioPersonalForm.get('codigoPostal').hasError('minlength')">
+                Se requiere mínimo 5 caracteres
+            </mat-error>
+            <mat-error *ngIf="domicilioPersonalForm.get('codigoPostal').hasError('pattern')">
+                Solo Números
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="input-1-4"  appearance="outline">
+            <mat-label>Colonia</mat-label>
+            <input matInput formControlName="colonia" required>
+            <mat-error *ngIf="domicilioPersonalForm.get('colonia').hasError('required')">
+                Dato Requerido
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="input-1-4"  appearance="outline">
+            <mat-label>Alcaldía o Municipio</mat-label>
+            <input matInput formControlName="municipio" required>
+            <mat-error *ngIf="domicilioPersonalForm.get('municipio').hasError('required')">
+                Dato Requerido
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="input-1-4"  appearance="outline">
+            <mat-label>Estado</mat-label>
+            <input matInput formControlName="estado" required>
+            <mat-error *ngIf="domicilioPersonalForm.get('estado').hasError('required')">
+                Dato Requerido
+            </mat-error>
+        </mat-form-field>
+    </div>
+    <div class="mat-typography">
+        <h3>Residencia en el domicilio</h3>
+    </div>
+    <div fxLayout="row wrap" fxLayoutAlign="start none" fxLayoutGap="10px grid">
+        <mat-form-field class="input-1-2"  appearance="outline">
+            <mat-label>Años</mat-label>
+            <input matInput formControlName="anosResidencia" required>
+            <mat-error *ngIf="domicilioPersonalForm.get('anosResidencia').hasError('required')">
+                Dato Requerido
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="input-1-2"  appearance="outline"> 
+            <mat-label>Meses</mat-label>
+            <mat-select formControlName="mesesResidencia">
+                <mat-option *ngFor="let mesesResidencia of meses" [value]="mesesResidencia.value">
+                {{mesesResidencia.value}}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="domicilioPersonalForm.get('mesesResidencia').hasError('required')">
+                Dato Requerido
+            </mat-error>
+        </mat-form-field>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <button class="btn-big" mat-raised-button matStepperPrevious>Regresar</button>
+        <button class="btn-big" mat-raised-button color="accent" (click)="datosDomicilioPersonal()">Continuar</button>
+    </div>
+</form>

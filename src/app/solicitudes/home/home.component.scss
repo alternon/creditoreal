@@ -1,0 +1,151 @@
+@import '../../../scss/mixins';
+@import '../../../scss/variables';
+
+.block-list-items {
+    position: relative;
+    flex: 1 1 calc(35%);
+    min-width: calc(35%);
+
+    @include mobile {
+        flex: 1 1 calc(100%);
+        min-width: calc(100%);
+        padding: 5vh 5vw 0;
+        box-sizing: border-box;
+
+        .container-list-items {
+            overflow-y: auto;
+            max-height: 100%;
+        }
+    }
+}
+
+.container-list-items {
+    overflow-y: scroll;
+    max-height: 70vh;
+    position: relative;
+}
+
+.lista-solicitudes {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100px !important;
+
+    .fecha {
+        margin: 0 0 0.5em;
+        font-size: 0.9em;
+        font-weight: 500;
+    }
+
+    .estatus {
+        margin-top: 0;
+        font-weight: 500;
+    }
+
+    .mat-icon.mat-accent {
+        position: absolute;
+        top: 20px;
+        left: 0;
+        background-color: $pale-grey;
+        border-radius: 100%;
+    }
+    
+    &::after {
+        content: "";
+        width: 100%;
+        height: 1px;
+        background-color: $grey;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    &:last-child {
+        &::after {
+            content: none;
+        } 
+    }
+}
+
+
+
+.darktheme {
+    flex: 1 1 calc(65%);
+    min-width: calc(65%);
+    color: $white;
+    text-align: center;
+
+    @include mobile {
+        flex: 1 1 calc(100%);
+        min-width: calc(100%);
+    }
+
+    .monto {
+        font-size: 1.5em;
+        font-weight: 500;
+    }
+
+    .check_circle {
+        font-size: 2.5em;
+    }
+
+    .id-solicitud,
+    h3 {
+        color: $pale-lilac;
+    }
+}
+
+.rojo {
+    color: $red;
+}
+
+.amarillo {
+    color: $yellow;
+}
+
+.naranja {
+    color: $orange;
+}
+
+.verde {
+    color: $green-blue;
+}
+
+.usuario,
+.estatus {
+    margin: 0;
+    font-weight: 500;
+}
+
+.lista-solicitudes-items {
+    width: 100%;;
+}
+
+.lista-solicitudes-text {
+    color: $dark-indigo;
+}
+
+.flecha {
+    color: grey;
+    font-size: 2em;
+}
+
+.logo-autos {
+    animation: scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation-delay: 0.5s;
+}
+
+@keyframes scale-in-center {
+    0% {
+      -webkit-transform: scale(0);
+              transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 1;
+    }
+}
+  

@@ -1,0 +1,9 @@
+<div class="container" fxLayout="row" fxLayoutAlign="space-between center">
+    <div>
+        <img class="logo" src="./assets/logo.svg">
+    </div>
+    <div>
+        <img src="./assets/logo-image.png">
+    </div>
+</div>
+<button *ngIf="statusLoginInput" class="cerrar-sesion" mat-button type="button" (click)="cerrarSesion()"><mat-icon>power_settings_new</mat-icon><span> Cerrar Sesión</span></button>

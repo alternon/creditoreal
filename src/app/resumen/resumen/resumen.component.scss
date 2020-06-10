@@ -1,0 +1,84 @@
+@import '../../../scss/mixins';
+@import '../../../scss/variables';
+
+.cotizador-campos {
+    color: $dark-indigo;
+    span {
+        font-size: 1.3em;
+        font-weight: 600;
+        display: block;
+    }
+}
+
+.darktheme {
+    flex: 1 1 calc(60%);
+    min-width: calc(60%);
+    text-align: left;
+    color: $grey;
+
+    @include mobile {
+        flex: 1 1 calc(100%);
+        min-width: calc(100%);
+    }
+
+    .block-detalles{
+        width: 50%;
+
+        @include mobile {
+            width: 90%;
+        }
+
+        h3 {
+            text-align: center;
+            color: $white;
+            font-size: 2em;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+    
+        .monto-mensual {
+            color: $green-blue;
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 0;
+        }
+    
+        .montos {
+            text-align: left;
+    
+            p {
+                width: 50%;
+            }
+    
+            span {
+                display: block;
+                color: $white;
+                font-size: 1.2em;
+            }
+        }
+
+    }
+}
+
+.block-btn {
+    margin: 2em 0;
+}
+
+.block-list-items {
+    position: relative;
+    flex: 1 1 calc(40%);
+    min-width: calc(40%);
+
+    @include mobile {
+        flex: 1 1 calc(100%);
+        min-width: calc(100%);
+        padding: 5vh 5vw 0;
+        box-sizing: border-box;
+        margin-top: 75px;
+
+        .container-list-items {
+            overflow-y: auto;
+            max-height: 100%;
+        }
+    }
+}

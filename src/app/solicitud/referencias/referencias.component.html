@@ -1,0 +1,93 @@
+<form [formGroup]="referenciasForm" class="example-form">
+    <ng-template matStepLabel>Referencias</ng-template>
+    <div class="header-component" fxLayout="row" fxLayoutAlign="space-between start">
+        <div>
+            <h1>Referencias</h1>
+            <p>Agrega tres referencias, esto nos ayudará a evaluar tu historial crediticio</p>
+        </div>
+        <div>
+            <img src="./assets/icon-references.png">
+        </div> 
+    </div>
+    <div>
+        <div class="mat-typography" class="input-1-4">
+            <h3>Referencia 1</h3>
+        </div>
+        <div fxLayout="row wrap" fxLayoutAlign="space-between center" fxLayoutGap="10px grid">
+            <mat-form-field appearance="outline" class="input-1-2">
+                <mat-label>Nombre completo</mat-label>
+                <input matInput formControlName="nombreReferencia1" required>
+                <mat-error *ngIf="referenciasForm.get('nombreReferencia1').hasError('required')">
+                    Dato Requerido
+                </mat-error>
+                <mat-error *ngIf="referenciasForm.get('nombreReferencia1').hasError('pattern')">
+                    Solo letras
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="input-1-2">
+                <mat-label>Teléfono</mat-label>
+                <input matInput formControlName="telefonoReferencia1" required>
+                <mat-error *ngIf="referenciasForm.get('telefonoReferencia1').hasError('required')">
+                    Dato Requerido
+                </mat-error>
+                <mat-error *ngIf="referenciasForm.get('telefonoReferencia1').hasError('pattern')">
+                    Solo números
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="mat-typography" class="input-1-4">
+            <h3>Referencia 2</h3>
+        </div>
+        <div fxLayout="row wrap" fxLayoutAlign="space-between center" fxLayoutGap="10px grid">
+            <mat-form-field appearance="outline" class="input-1-2">
+                <mat-label>Nombre completo</mat-label>
+                <input matInput formControlName="nombreReferencia2" required>
+                <mat-error *ngIf="referenciasForm.get('nombreReferencia2').hasError('required')">
+                    Dato Requerido
+                </mat-error>
+                <mat-error *ngIf="referenciasForm.get('nombreReferencia2').hasError('pattern')">
+                    Solo letras
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="input-1-2">
+                <mat-label>Teléfono</mat-label>
+                <input matInput formControlName="telefonoReferencia2" required>
+                <mat-error *ngIf="referenciasForm.get('telefonoReferencia2').hasError('required')">
+                    Dato Requerido
+                </mat-error>
+                <mat-error *ngIf="referenciasForm.get('telefonoReferencia2').hasError('pattern')">
+                    Solo números
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="mat-typography" class="input-1-4">
+            <h3>Referencia 3</h3>
+        </div>
+        <div fxLayout="row wrap" fxLayoutAlign="space-between center" fxLayoutGap="10px grid">
+            <mat-form-field appearance="outline" class="input-1-2">
+                <mat-label>Nombre completo</mat-label>
+                <input matInput formControlName="nombreReferencia3" required>
+                <mat-error *ngIf="referenciasForm.get('nombreReferencia3').hasError('required')">
+                    Dato Requerido
+                </mat-error>
+                <mat-error *ngIf="referenciasForm.get('nombreReferencia3').hasError('pattern')">
+                    Solo letras
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="input-1-2">
+                <mat-label>Teléfono</mat-label>
+                <input matInput formControlName="telefonoReferencia3" required>
+                <mat-error *ngIf="referenciasForm.get('telefonoReferencia3').hasError('required')">
+                    Dato Requerido
+                </mat-error>
+                <mat-error *ngIf="referenciasForm.get('telefonoReferencia3').hasError('pattern')">
+                    Solo números
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <button class="btn-big" mat-raised-button matStepperPrevious>Regresar</button>
+        <button class="btn-big" mat-raised-button color="accent" matStepperNext (click)="resumen()" type="button">Continuar</button>
+    </div>
+</form>

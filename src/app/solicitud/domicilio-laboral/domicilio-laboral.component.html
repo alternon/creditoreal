@@ -1,0 +1,76 @@
+<form [formGroup]="domicilioLaboralForm" class="example-form">
+    <ng-template matStepLabel>Domicilio Laboral</ng-template>
+    <div class="header-component" fxLayout="row" fxLayoutAlign="space-between start">
+        <div>
+            <h1>Domicilio Laboral</h1>
+            <p>La dirección debe coincidir con un comprobante de domicilio vigente.</p>
+        </div>
+        <div>
+            <img src="../../../assets/icon-company-address.png">
+        </div> 
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <mat-checkbox>Misma que el domicilio</mat-checkbox>
+    </div>
+    <div fxLayout="row wrap" fxLayoutAlign="space-between center" fxLayoutGap="10px grid">
+        <mat-form-field class="input-1-2" appearance="outline">
+            <mat-label>Calle</mat-label>
+            <input matInput formControlName="calle" required>
+            <mat-error *ngIf="domicilioLaboralForm.get('calle').hasError('required')">
+                Dato Requerido
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="input-1-4" appearance="outline">
+            <mat-label>No. exterior</mat-label>
+            <input matInput formControlName="numeroExterior" required>
+            <mat-error *ngIf="domicilioLaboralForm.get('numeroExterior').hasError('required')">
+                Dato Requerido
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="input-1-4" appearance="outline">
+            <mat-label>No. interior</mat-label>
+            <input matInput formControlName="numeroInterior" required>
+            <mat-error *ngIf="domicilioLaboralForm.get('numeroInterior').hasError('required')">
+                Dato Requerido
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="input-1-4" appearance="outline">
+            <mat-label>Código Postal</mat-label>
+            <input matInput formControlName="codigoPostal" maxlength="5" required>
+            <mat-error *ngIf="domicilioLaboralForm.get('codigoPostal').hasError('required')">
+                Dato Requerido
+            </mat-error>
+            <mat-error *ngIf="domicilioLaboralForm.get('codigoPostal').hasError('minlength')">
+                
+            </mat-error>
+            <mat-error *ngIf="domicilioLaboralForm.get('codigoPostal').hasError('pattern')">
+                Solo números
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="input-1-4" appearance="outline">
+            <mat-label>Colonia</mat-label>
+            <input matInput formControlName="colonia" required>
+            <mat-error *ngIf="domicilioLaboralForm.get('colonia').hasError('required')">
+                Dato Requerido
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="input-1-4" appearance="outline">
+            <mat-label>Alcaldía o Municipio</mat-label>
+            <input matInput formControlName="municipio" required>
+            <mat-error *ngIf="domicilioLaboralForm.get('municipio').hasError('required')">
+                Dato Requerido
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="input-1-4" appearance="outline">
+            <mat-label>Estado</mat-label>
+            <input matInput formControlName="estado" required>
+            <mat-error *ngIf="domicilioLaboralForm.get('estado').hasError('required')">
+                Dato Requerido
+            </mat-error>
+        </mat-form-field>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <button class="btn-big" mat-raised-button matStepperPrevious>Regresar</button>
+        <button class="btn-big" mat-raised-button color="accent" matStepperNext (click)="datosDomicilioLaboral()">Continuar</button>
+    </div>
+</form>

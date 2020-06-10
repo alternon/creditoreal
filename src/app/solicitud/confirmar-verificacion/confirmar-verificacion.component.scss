@@ -1,0 +1,63 @@
+@import '../../../scss/variables';
+
+/* mat-checkbox {
+    margin-bottom: 2rem;
+} */
+
+.title-component {
+    p {
+        text-align: center;
+        line-height: 1.5em;
+        
+        span {
+            font-weight: 500;
+            color: $dark-indigo;
+            display: block;
+        }
+    }
+}
+
+.block-aviso-privacidad {
+    text-align: center;
+    margin: 0 0 2em;
+    display: flex;
+    justify-content: center;
+
+    p {
+        display: inline-block;
+        margin: 0 0 0 1em;
+        a {
+            color: $green-blue;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.timer {
+    color:$blue;
+    font-weight: 500;
+}
+
+.textarea {
+    text-align: justify;
+    margin-bottom: 1em;
+    color: $dark-indigo;
+
+    .textarea-text {
+        width: 75%;
+        background-color: white;
+        border: 1px solid rgba(0, 0, 0, 0.12);
+        border-radius: 5px;
+        padding: 1em;
+        height: 120px;
+        overflow: scroll;
+
+        p {
+            font-weight: bold;
+            display: block;
+            text-align: center;
+            margin: 0;
+        }
+    }
+    
+}

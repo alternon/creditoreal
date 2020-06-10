@@ -1,0 +1,74 @@
+@import '../../../scss/mixins';
+@import '../../../scss/variables';
+
+h4 {
+    font-weight: 500;
+}
+
+.monto-financiar {
+    color: $dark-indigo;
+    font-size: 2em;
+    font-weight: 700;
+    margin: 0 0 0.3em;
+}
+
+.opcion-pagar {
+    margin-bottom: 1em;
+
+    .mat-radio-button {
+        width: 50%;
+    }
+}
+
+.block-plazos {
+    width: 100%;
+    box-sizing: border-box;
+
+    .mat-button-toggle {
+        padding: 1em;
+
+        span {
+            color: $blue;
+            font-weight: 700;
+            font-size: 1.25rem;
+
+            mat-icon {
+                color: $grey;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translate(50%, -50%);
+            }
+
+            &:first-child {
+                padding-left: 30px;
+            }
+        }
+    }
+
+    .mat-button-toggle-checked {
+        background-color: $blue;
+
+        span {
+            color: $white;
+            
+            mat-icon {
+                color: $white;
+            }
+        }
+    }
+}
+
+.container-list-items {
+    overflow-y: scroll;
+    max-height: 27vh;
+    position: relative;
+    box-sizing: border-box;
+    @include mobile {
+        max-height: 80vh;
+    }
+}
+
+.block-btn {
+    margin: 1em 0;
+}

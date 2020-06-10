@@ -1,0 +1,33 @@
+<div [ngClass]="{
+    'bg': true,
+    'bg-detalles': statusBtnCotizador
+  }"></div>
+<app-headerdark></app-headerdark>
+<div class="container">
+    <div fxLayout="column" fxLayoutAlign="center stretch">
+        <div fxLayout="row wrap" fxLayoutAlign="space-between center" fxLayoutGap="grid">
+            <div class="darktheme" fxLayout="column" fxLayoutAlign="center center">
+                <img class="logo-autos" src="./assets/icon_app_round.png" *ngIf="!statusBtnCotizador">
+                <div class="block-detalles" *ngIf="statusBtnCotizador">
+                    <h3>Cotizacíon</h3>
+                    <p class="monto-mensual">{{costoMensual | currency:"MXN":"symbol-narrow"}}</p>
+                    <p>a {{mensualidades}} meses</p>
+                    <div class="montos" fxLayout="row wrap" fxLayoutAlign="space-between center" fxLayoutGap="grid">
+                        <p>Monto a financiar <span>{{montoFinanciar | currency:"MXN":"symbol-narrow"}}</span></p>
+                        <p>Costo del Seguro <span>{{seguro | currency:"MXN":"symbol-narrow"}}</span></p>
+                        <p>Enganche <span>{{enganche | currency:"MXN":"symbol-narrow"}}</span></p>
+                        <p>Comisión por apertura 3% <span>{{comision | currency:"MXN":"symbol-narrow"}}</span></p>
+                        <p>Costo de auto <span>{{costoAuto | currency:"MXN":"symbol-narrow"}}</span></p>
+                    </div>
+                    <div class="block-btn" fxLayout="column wrap" fxLayoutAlign="center center">
+                        <button class="btn-big" mat-raised-button color="primary" type="button">Ver cotización</button>
+                    </div>
+                </div>
+            </div>
+            <div class="block-list-items">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,44 @@
+<form [formGroup]="verificacionForm" class="example-form">
+    <ng-template matStepLabel>Código de Verificación</ng-template>
+    <div class="header-component title-component" fxLayout="row" fxLayoutAlign="center center">
+        <div>
+            <h1>Código de verificación</h1>
+            <p>Ingresa el código enviado al <span>{{telefono}}</span></p>
+            <p class="timer">{{ minutes | formatTime }}:{{ seconds | formatTime }}</p>
+        </div>
+    </div>
+    <div class="inputVerificacion" fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="10px grid">
+        <mat-form-field appearance="outline">
+            <input matInput formControlName="verCamp1" required maxlength="1">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <input matInput formControlName="verCamp2" required maxlength="1">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <input matInput formControlName="verCamp3" required maxlength="1">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <input matInput formControlName="verCamp4" required maxlength="1">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <input matInput formControlName="verCamp5" required maxlength="1">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <input matInput formControlName="verCamp6" required maxlength="1">
+        </mat-form-field>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <p>¿No has recibido el código?</p>
+        <button mat-button color="accent" type="button">Enviar de nuevo</button>
+    </div>
+    <div class="textarea" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <div class="textarea-text"><p>Cláusula para utilizar medios electrónicos de autenticación</p>Las partes acuerdan que el Cliente podrá expresar su consentimiento respecto a la presente cláusula, así como tener acceso a los servicios ofrecidos por CREDITO REAL S.A.B. de C.V. SOFOM E.R. mediante medios electrónicos tales como NIP</div>
+    </div>
+    <div class="terminos" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <mat-checkbox formControlName="terminos" required>Cliente ha leído y acepta <a href="../../../assets/doc/aviso_de_privacidad.pdf" target="_blank">TERMINOS Y CONDICIONES</a> de Crédito Real, así como <a href="../../../assets/doc/aviso_de_privacidad.pdf" target="_blank">Clausula para Utilizar Médios Electrónicos</a></mat-checkbox>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <button class="btn-big" mat-raised-button matStepperPrevious type="button">Regresar</button>
+        <button class="btn-big" mat-raised-button color="accent" (click)="confirmarCodigo()" type="button" matStepperNext [disabled]="!verificacionForm.valid">Continuar</button>
+    </div>
+</form>

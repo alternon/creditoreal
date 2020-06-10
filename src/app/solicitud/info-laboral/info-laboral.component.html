@@ -1,0 +1,69 @@
+<form [formGroup]="informacionLaboralForm" class="example-form">
+    <ng-template matStepLabel>Información Laboral</ng-template>
+    <div class="header-component" fxLayout="row" fxLayoutAlign="space-between start">
+        <div>
+            <h1>Información Laboral</h1>
+            <p>Use los datos de la ocupación actual de su cliente</p>
+        </div>
+        <div>
+            <img src="./assets/icon-job-info.png">
+        </div> 
+    </div>
+<!--     <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <mat-checkbox>Tu cliente acepta la consulta de su Información en Círculo de Crédito</mat-checkbox>
+    </div> -->
+    <div fxLayout="row wrap" fxLayoutAlign="space-between center" fxLayoutGap="10px grid">
+        <mat-form-field class="input-1-3" appearance="outline">
+            <mat-label>A qué se dedica</mat-label>
+            <mat-select formControlName="ocupacion" required>
+                <mat-option *ngFor="let ocupacion of ocupaciones" [value]="ocupacion.value">
+                    {{ ocupacion.value }}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="informacionLaboralForm.get('ocupacion').hasError('required')">
+                Dato Requerido
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="input-1-3" appearance="outline">
+            <mat-label>Nombre de la empresa</mat-label>
+            <input matInput formControlName="nombreEmpresa" required>
+            <mat-error *ngIf="informacionLaboralForm.get('nombreEmpresa').hasError('required')">
+                Dato Requerido
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="input-1-3" appearance="outline">
+            <mat-label>Ingresos netos mensuales</mat-label>
+            <input matInput formControlName="ingresos" required>
+            <mat-error *ngIf="informacionLaboralForm.get('ingresos').hasError('required')">
+                Dato Requerido
+            </mat-error>
+        </mat-form-field>
+    </div>
+    <div class="mat-typography">
+        <h3>Antig&uuml;edad</h3>
+    </div>
+    <div fxLayout="row wrap" fxLayoutAlign="start none" fxLayoutGap="10px grid">
+        <mat-form-field class="input-1-2" appearance="outline">
+            <mat-label>Años</mat-label>
+            <input matInput formControlName="anosAntiguedad" required>
+            <mat-error *ngIf="informacionLaboralForm.get('anosAntiguedad').hasError('required')">
+                Dato Requerido
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="input-1-2" appearance="outline">
+            <mat-label>Meses</mat-label>
+            <mat-select formControlName="mesesAntiguedad">
+                <mat-option *ngFor="let mesesAntiguedad of meses" [value]="mesesAntiguedad.value">
+                {{mesesAntiguedad.value}}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="informacionLaboralForm.get('mesesAntiguedad').hasError('required')">
+                Dato Requerido
+            </mat-error>
+        </mat-form-field>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <button class="btn-big" mat-raised-button matStepperPrevious>Regresar</button>
+        <button class="btn-big" mat-raised-button color="accent" matStepperNext>Continuar</button>
+    </div>
+</form>

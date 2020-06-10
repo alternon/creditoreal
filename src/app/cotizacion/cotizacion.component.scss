@@ -1,0 +1,183 @@
+@import '../../scss/mixins';
+@import '../../scss/variables';
+
+.bg {
+/*     clip-path: polygon(100% 0, 100% 80%, -50% 100%, 0 100%, 0 0); */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    background: url('../../assets/background-dark.png') no-repeat 0 0 $dark-indigo;
+    background-position: 0 0, 0 0;
+    background-repeat: no-repeat, no-repeat;
+    background-size: contain;
+    background-attachment: fixed;
+    animation: expandheight 1s ease-out forwards;
+    
+    @include desktop {
+/*         clip-path: polygon(0 0, 55% 0, 45% 100%, 0% 100%); */
+        width: 50%;
+        background-image: url('../../assets/background-dark.png'), linear-gradient(-75deg, $pale-grey 50%, $dark-indigo 50%);
+        height: 100%;
+        position: fixed;
+        animation: expand 1s ease-out forwards;
+    }
+}
+
+.bg-detalles {
+
+    animation: expandheightdetalles 1s ease-out forwards;
+    
+    @include desktop {
+        animation: expand 1s ease-out forwards;
+    }
+}
+
+.logo-autos {
+    transform: scale(1.5);
+    @include mobile {
+        transform: scale(1);
+    }
+}
+
+.darktheme {
+    flex: 1 1 calc(60%);
+    min-width: calc(60%);
+    text-align: left;
+    color: $grey;
+
+    @include mobile {
+        flex: 1 1 calc(100%);
+        min-width: calc(100%);
+    }
+
+    .block-detalles{
+        width: 55%;
+
+        @include mobile {
+            width: 90%;
+        }
+
+        h3 {
+            text-align: center;
+            color: $white;
+            font-size: 2em;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+    
+        .monto-mensual {
+            color: $green-blue;
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 0;
+        }
+    
+        .montos {
+            text-align: left;
+    
+            p {
+                width: 50%;
+            }
+    
+            span {
+                display: block;
+                color: $white;
+                font-size: 1.2em;
+            }
+        }
+
+        .block-btn {
+            margin: 1em 0;
+        }
+    }
+}
+
+.block-list-items {
+    position: relative;
+    flex: 1 1 calc(40%);
+    min-width: calc(40%);
+
+    @include mobile {
+        flex: 1 1 calc(100%);
+        min-width: calc(100%);
+        padding: 5vh 5vw 0;
+        box-sizing: border-box;
+        margin-top: 75px;
+
+        .container-list-items {
+            overflow-y: auto;
+            max-height: 100%;
+        }
+    }
+}
+
+@include ie11 {
+    .darktheme {
+        width: calc(60%);
+    }
+    .block-list-items {
+        width: calc(34%);
+    }
+}
+
+@keyframes expand {
+    from {
+        width: 0;
+    }
+    
+    to {
+        width: 100%;
+    }
+}
+
+
+@keyframes expandheight {
+    from {
+        height: 0;
+    }
+    
+    to {
+        height: 400px;
+    }
+}
+
+@keyframes expandheightdetalles {
+    from {
+        height: 0;
+    }
+    
+    to {
+        height: 650px;
+    }
+}
+
+@include edge {
+    .bg{
+        @include desktop { 
+            width: 50%;
+        }
+    }
+
+    @keyframes expand {
+        from {
+            width: 0;
+        }
+        
+        to {
+            width: 100%;
+        }
+    }
+}
+
+@include ie11 {
+    .bg {
+        animation: none;
+        @include desktop { 
+            width: 100%;
+        }
+        @include mobile {
+            height: 650px;
+        }
+    }
+}
